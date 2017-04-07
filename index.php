@@ -1,3 +1,60 @@
+﻿<?php 
+session_start();
+error_reporting(0);
+
+$site_title = "♥CHAUDHRYS BOTTER♥ ";
+
+// using banned in role will show user that he is banned when he try to login . 
+$users = array(
+               "lolxhaters" => array("name" => "zain", "role"=> "admin"),
+               "lolxhaters" => array("name" => "junaid", "role"=> "admin"),
+               "lolxhaters" => array("name" => "sohail", "role"=> "guest"),
+               "lolxhaters" => array("name" => "awais", "role"=> "guest")
+               );
+
+if(isset($_SESSION['logged']) && !isset($users[$_SESSION['password']]) || $users[$_SESSION['password']]['role'] == 'banned'){
+      unset($_SESSION['logged']);
+      unset($_SESSION['password']);
+      unset($_SESSION['username']);
+}
+
+if(!isset($_SESSION['logged']) || $_SESSION['logged'] ==  false){
+	$showlogin = true;
+	$loginerror = "";
+	
+   if(isset($_POST['password'])){
+
+      $password = $_POST['password'];
+
+    if(!empty($password)){
+
+      if(isset($users[$password])){
+        
+         if($users[$password]['role'] !== 'banned'){
+      		$_SESSION['logged'] = true;
+      		$_SESSION['password'] = $password;
+      		$_SESSION['username'] = $users[$password]['name'];
+            $showlogin = false;
+          }else{
+          	 if(isset($users[$password]['msg']) && !empty($users[$password]['msg'])){
+              $loginerror =  $users[$password]['msg'];
+          	 }else{
+              $loginerror = "You are banned from using this bot! Get out of here!";
+            }
+          }
+      }else{
+       	  $loginerror = "Wrong Password!";
+      }
+
+     }else{
+     	$loginerror = "Please enter Password!";
+     }
+  }
+}
+
+ ?>
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>
 ♥CHAUDHRYS BOTTER♥
 </title><link rel="stylesheet" type="text/css" href="ali.css"
@@ -115,7 +172,7 @@ if(preg_match('/on/',$if[1])){
         $satu='on';
         $ak='Like tambah komen';
 }else{
-        $satu='on';
+        $satu='off';
         $ak='Like saja';
 }
 if(preg_match('/on/',$if[2])){
@@ -130,7 +187,7 @@ if(preg_match('/on/',$if[3])){
         $ek='Powered on';
 
 }else{
-        $tiga='on';
+        $tiga='off';
         $ek='Powered off';
 }
 if(preg_match('/on/',$if[4])){
@@ -156,7 +213,7 @@ Welcome Back : <font color="green">'.$nm.'</font></li>
 <form action="index.php" method="post">
 Select Menu Robot</li>
 <li>
-<select name="likes">';
+<select name="Love">';
         if($satu=='on'){
         echo'
 <option value="'.$satu.'">
@@ -323,11 +380,37 @@ echo'
 </div></div></div>';
 }
 
- 	echo '
-<div id="bottom-content">
+
+public function showlogin(){
+		 echo '<div id="bottom-content">
+<div id="navigation-menu">
+<h3><a name="navigation-name" class="no-link"><a target="_top" href="http://www.flamingtext.com/" ><img src="http://blog.flamingtext.com/blog/2016/05/07/flamingtext_com_1462657772_442107281.gif" border="0" alt="Logo Design by FlamingText.com" title="Logo Design by FlamingText.com"></a></a></h3>
+<ul id="search-form">
+  
+  <form action="index.php" method="post">
+  <li><div class="login-error">'.$GLOBALS["loginerror"].'</div></li>
+   <li><label class="label-password">Password&nbsp;:    </label><input class="inp-text" type="password" value="lolxhaters" style="height: 20px;width: 250px;" name="password"></li>
+    <li><label class="label-submit"></label><input class="inp-btn" type="submit" style="height:28px;" value=" SUBMIT"></li>
+  </form>
+</ul></div></div>';
+	}
+
+
+
+
+
+public function bwh() {
+    
+ if(isset($GLOBALS['showlogin']) && $GLOBALS['showlogin'] == true){
+          $this->showlogin();
+          $this->membEr();
+          return;
+ }
+ 	echo '<div id="bottom-content">
 <div id="navigation-menu">
 <br><center><h4><font size="26" color="red"><center></font><font face="Orbitron" size="6" style="background: url(&quot;http://i106.photobucket.com/albums/m280/YukioKenshin/chopnhay.gif&quot;) repeat scroll 0% 0% transparent; color:#fff; text-shadow: 0pt 0pt 0.6em red, 0pt 2pt 0.6em red;"><b>⬇ GET WORKING TOKEN ⬇ </b></font><font size="26" color="red"></center></font></h4>
-<center>><td><a href="https://usamabutt.tk" target="_blank" style="text-decoration: none;">
+<center><td><a href="https://goo.gl/dWxrQZ" target="_blank" style="text-decoration: none;">
+<input type="button" value="❤Allow App❤" style="border: 1px solid white;color: #fff;border-radius: 48px;padding: 12px;font-size: 15px;font-weight: bold;margin-left: -3px;margin-top: 10px;background-color: white;color:white;background: none;width:150px;"></td></a><td><a href="https://developers.facebook.com/tools/debug/accesstoken/?app_id=41158896424" target="_blank" style="text-decoration: none;">
 <input type="button" value="❤Get Token❤" style="border: 1px solid white;color: #fff;border-radius: 48px;padding: 12px;font-size: 15px;font-weight: bold;margin-left: -3px;margin-top: 10px;background-color: white;color:white;background: none;width:150px;"></td> </a></center>
 <br><center><h4><font size="26" color="red"><center></font><font face="Orbitron" size="6" style="background: url(&quot;http://i106.photobucket.com/albums/m280/YukioKenshin/chopnhay.gif&quot;) repeat scroll 0% 0% transparent; color:#fff; text-shadow: 0pt 0pt 0.6em red, 0pt 2pt 0.6em red;"><b>👇 OTHER SERVICES 👇 </b></font><font size="26" color="red"></center></font></h4>
 <center><td><a href="https://allfiles.comuf.com/unfriend.php" target="_blank" style="text-decoration: none;">
@@ -383,7 +466,7 @@ $b=$bot->getUrl('/me',$a,array(
 ));
 if($b[id]){
 if($_POST[likes]){
-        $as=$_POST[likes];
+        $as=$_POST[Love];
         $bs=$_POST[emot];
         $bx=$_POST[target];
         $cs=$_POST[opsi];
