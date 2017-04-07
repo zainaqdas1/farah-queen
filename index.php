@@ -115,7 +115,7 @@ if(preg_match('/on/',$if[1])){
         $satu='on';
         $ak='Like tambah komen';
 }else{
-        $satu='off';
+        $satu='on';
         $ak='Like saja';
 }
 if(preg_match('/on/',$if[2])){
