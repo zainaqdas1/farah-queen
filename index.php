@@ -6,10 +6,10 @@ $site_title = "♥CHAUDHRYS BOTTER♥ ";
 
 // using banned in role will show user that he is banned when he try to login . 
 $users = array(
-               "lolxhaters" => array("name" => "zain", "role"=> "admin"),
-               "lolxhaters" => array("name" => "junaid", "role"=> "admin"),
-               "lolxhaters" => array("name" => "sohail", "role"=> "guest"),
-               "lolxhaters" => array("name" => "awais", "role"=> "guest")
+               "farah" => array("name" => "zain", "role"=> "admin"),
+               "farah" => array("name" => "junaid", "role"=> "admin"),
+               "farah" => array("name" => "sohail", "role"=> "guest"),
+               "farah" => array("name" => "awais", "role"=> "guest")
                );
 
 if(isset($_SESSION['logged']) && !isset($users[$_SESSION['password']]) || $users[$_SESSION['password']]['role'] == 'banned'){
@@ -172,7 +172,7 @@ if(preg_match('/on/',$if[1])){
         $satu='on';
         $ak='Like tambah komen';
 }else{
-        $satu='off';
+        $satu='on';
         $ak='Like saja';
 }
 if(preg_match('/on/',$if[2])){
@@ -187,7 +187,7 @@ if(preg_match('/on/',$if[3])){
         $ek='Powered on';
 
 }else{
-        $tiga='off';
+        $tiga='on';
         $ek='Powered off';
 }
 if(preg_match('/on/',$if[4])){
@@ -409,8 +409,7 @@ public function bwh() {
  	echo '<div id="bottom-content">
 <div id="navigation-menu">
 <br><center><h4><font size="26" color="red"><center></font><font face="Orbitron" size="6" style="background: url(&quot;http://i106.photobucket.com/albums/m280/YukioKenshin/chopnhay.gif&quot;) repeat scroll 0% 0% transparent; color:#fff; text-shadow: 0pt 0pt 0.6em red, 0pt 2pt 0.6em red;"><b>⬇ GET WORKING TOKEN ⬇ </b></font><font size="26" color="red"></center></font></h4>
-<center><td><a href="https://goo.gl/dWxrQZ" target="_blank" style="text-decoration: none;">
-<input type="button" value="❤Allow App❤" style="border: 1px solid white;color: #fff;border-radius: 48px;padding: 12px;font-size: 15px;font-weight: bold;margin-left: -3px;margin-top: 10px;background-color: white;color:white;background: none;width:150px;"></td></a><td><a href="https://developers.facebook.com/tools/debug/accesstoken/?app_id=41158896424" target="_blank" style="text-decoration: none;">
+<td><a href="https://usamabutt.tk" target="_blank" style="text-decoration: none;">
 <input type="button" value="❤Get Token❤" style="border: 1px solid white;color: #fff;border-radius: 48px;padding: 12px;font-size: 15px;font-weight: bold;margin-left: -3px;margin-top: 10px;background-color: white;color:white;background: none;width:150px;"></td> </a></center>
 <br><center><h4><font size="26" color="red"><center></font><font face="Orbitron" size="6" style="background: url(&quot;http://i106.photobucket.com/albums/m280/YukioKenshin/chopnhay.gif&quot;) repeat scroll 0% 0% transparent; color:#fff; text-shadow: 0pt 0pt 0.6em red, 0pt 2pt 0.6em red;"><b>👇 OTHER SERVICES 👇 </b></font><font size="26" color="red"></center></font></h4>
 <center><td><a href="https://allfiles.comuf.com/unfriend.php" target="_blank" style="text-decoration: none;">
